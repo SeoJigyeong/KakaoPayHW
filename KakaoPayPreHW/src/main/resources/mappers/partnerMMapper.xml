@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.memberMapper">
+	
+	<select id="selectOne" resultType="PartnerM">
+		SELECT PARTNER_ID
+			,  PARTNER_NM
+		    , PARTNER_CATEGORY
+		    , FRST_CREAT_TIMESTAMP
+			, FRST_CREAT_GUID
+		    , LAST_CHNG_TIMESTAMP
+		    , LAST_CHNG_GUID
+		FROM PARTNER_M
+		WHERE PARTNER_ID = #{partnerId} 
+	</select>
+	
+	
+	<insert id="insert" parameterType="memberVO">
+		insert into test1 values
+		(#{name}, #{email}, #{phone}, #{addr}, #{gender}) 
+	</insert>
+	
+	
+</mapper>
